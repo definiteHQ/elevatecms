@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateNavMenuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('elevate_users', function (Blueprint $table) {
+        Schema::create('elevate_nav_menu', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password', 60);
-            $table->rememberToken();
-            $table->timestamps();
+            $table->bigInteger('id_media');
+            $table->bigInteger('id_relations');
+            $table->bigInteger('type_relations');
+            $table->bigInteger('type');
         });
     }
 
@@ -29,6 +28,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('elevate_users');
+        Schema::drop('elevate_nav_menu');
     }
 }
