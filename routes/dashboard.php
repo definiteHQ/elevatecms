@@ -11,4 +11,7 @@
 |
 */
 
-Route::group(['prefix']);
+Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function ()
+{
+
+});
