@@ -62,7 +62,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
-                        <form method="#" action="#">
+                        {{-- <form method="#" action="#"> --}}
+                        {!! Form::open() !!}
 
                         <!--   if you want to have the card without animation please remove the ".card-hidden" class   -->
                             <div class="card card-hidden">
@@ -70,11 +71,18 @@
                                 <div class="content">
                                     <div class="form-group">
                                         <label>Email address</label>
-                                        <input type="email" placeholder="Enter email" class="form-control">
+                                        {{-- <input type="email" placeholder="Enter email" class="form-control"> --}}
+                                        {!! Form::email('email', null, [
+                                            'placeholder' => 'Enter email',
+                                            'class' => 'form-control'
+                                        ]) !!}
                                     </div>
                                     <div class="form-group">
                                         <label>Password</label>
-                                        <input type="password" placeholder="Password" class="form-control">
+                                        {{-- <input type="password" placeholder="Password" class="form-control"> --}}
+                                        {!! Form::password('password', [
+                                            'class' => 'form-control'
+                                        ]) !!}
                                     </div>
                                     {{-- <div class="form-group">
                                         <label class="checkbox">
@@ -88,7 +96,8 @@
                                 </div>
                             </div>
 
-                        </form>
+                        {{-- </form> --}}
+                        {!! Form::close() !!}
 
                     </div>
                 </div>
