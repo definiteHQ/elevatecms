@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function ()
+Route::group(['prefix' => 'backend', 'middleware' => 'auth'], function ()
 {
 
 });

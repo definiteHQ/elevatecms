@@ -63,12 +63,21 @@
                 <div class="row">
                     <div class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3">
                         {{-- <form method="#" action="#"> --}}
-                        {!! Form::open() !!}
+                        {{-- @if(!$errors->isEmpty()) --}}
+                        {{-- @endif --}}
+                        {!! Form::open([
+                        ]) !!}
 
                         <!--   if you want to have the card without animation please remove the ".card-hidden" class   -->
                             <div class="card card-hidden">
                                 <div class="header text-center">Login</div>
                                 <div class="content">
+                                    @if(!$errors->isEmpty())
+                                        {{-- {{ dd($errors->getMessages()) }} --}}
+                                        {!! error_widget($errors->getMessages()) !!}
+
+                                    @endif
+
                                     <div class="form-group">
                                         <label>Email address</label>
                                         {{-- <input type="email" placeholder="Enter email" class="form-control"> --}}

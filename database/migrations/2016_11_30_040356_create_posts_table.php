@@ -14,7 +14,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('elevate_posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('id_user');
+            $table->bigInteger('user_id');
             $table->integer('have_custom_field');
             $table->longText('post_content');
             $table->text('post_title');
