@@ -4,7 +4,7 @@
 	<meta charset="utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<title>EU-ASEAN Dashboard</title>
+	<title>Elevate CMS Dashboard</title>
 
 	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
@@ -80,7 +80,7 @@
     	<div class="sidebar-wrapper">
             <div class="logo">
                 <a href="/" class="simple-text">
-                    EU-ASEAN
+                    Elevate CMS
                 </a>
             </div>
 
@@ -91,30 +91,48 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="{{ Route::getCurrentRoute()->getName() == 'registrants.index' ? 'active' : '' }}">
-                    <a href="{{ route('registrants.index') }}">
+
+                <li class="">
+                    <a href="#">
+                        <i class="ti-file"></i>
+                        <p>Pages</p>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#">
+                        <i class="ti-files"></i>
+                        <p>Posts</p>
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="#">
+                        <i class="ti-gallery"></i>
+                        <p>Media</p>
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="#">
+                        <i class="ti-layers"></i>
+                        <p>Fieldsets</p>
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="#">
+                        <i class="ti-settings"></i>
+                        <p>Settings</p>
+                    </a>
+                </li>
+
+                <li class="">
+                    <a href="#">
                         <i class="ti-user"></i>
-                        <p>All Registrant</p>
+                        <p>User</p>
                     </a>
                 </li>
-                <li class="{{ Route::getCurrentRoute()->getName() == 'registrants.pending' ? 'active' : '' }}">
-                    <a href="{{ route('registrants.pending') }}">
-                        <i class="ti-shield"></i>
-                        <p>Pending Registrants</p>
-                    </a>
-                </li>
-                 <li class="{{ Route::getCurrentRoute()->getName() == 'registrants.approved' ? 'active' : '' }}">
-                    <a href="{{ route('registrants.approved') }}">
-                        <i class="ti-check-box"></i>
-                        <p>Approved Registrants</p>
-                    </a>
-                </li>
-                <li class="{{ Route::getCurrentRoute()->getName() == 'registrants.winner' ? 'active' : '' }}">
-                    <a href="{{ route('registrants.winner') }}">
-                        <i class="ti-cup"></i>
-                        <p>Winner List</p>
-                    </a>
-                </li>
+
                 <li>
                     <a class="logout" href="javascript:;">
                         <i class="ti-power-off"></i>
@@ -163,7 +181,7 @@
         <footer class="footer">
             <div class="container-fluid">
                 <div class="copyright pull-right">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="https://edelman.id">Edelman</a>
+                    &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="https://definite.co.id">Definite Maji Arsana</a>
                 </div>
             </div>
         </footer>
@@ -173,7 +191,7 @@
 
 {{ Form::open([
     'class' => 'hidden',
-    'url' => route('logout'),
+    'url' => url('auth/logout'),
     'id' => 'form-logout'
 ]) }}
 
@@ -181,7 +199,7 @@
 
 </body>
     <script>
-        var baseUrl = '{{ env('BASE_URL','http://eu-asean.dev') }}';
+        var baseUrl = '{{ env('BASE_URL','http://elevate-cms.dev') }}';
         var apiUrl = baseUrl + '/api';
         var backendUrl = baseUrl + '/backend';
     </script>
