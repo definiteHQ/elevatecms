@@ -60,7 +60,7 @@
                 <div class="form-group">
                     <input type="password" class="form-control border-input" placeholder="Password" required>
                 </div>
-                
+
                 <div class="form-group">
                     <div class="text-center">
                         <button type="submit" class="btn btn-info btn-fill btn-wd">Login</button>
@@ -72,7 +72,7 @@
          <div class="alert alert-danger">
             <button type="button" aria-hidden="true" class="close">×</button>
             <span>Wrong Credentials</span>
-        </div> 
+        </div>
     </div>
 </div>
 
