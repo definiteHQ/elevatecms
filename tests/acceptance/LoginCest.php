@@ -17,6 +17,6 @@ class LoginCest
         $I->fillField('email', 'admin@demo.com');
         $I->fillField('password', 'demo12345');
         $I->click('Login');
-        $I->seeCurrentUrlEquals('backend');
+        $I->seeCurrentUrlEquals('/backend');
     }
 }
