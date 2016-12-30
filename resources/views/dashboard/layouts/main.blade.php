@@ -85,11 +85,20 @@
             </div>
 
             <ul class="nav">
-                <li class="{{ Route::getCurrentRoute()->getName() == 'dashboard.index' ? 'active' : '' }}">
+                <li data-toggle="collapse" aria-expanded="true" href="#dashboardOverview" class="{{ Route::getCurrentRoute()->getName() == 'dashboard.index' ? 'active' : '' }}">
                     <a href="{{ route('dashboard.index') }}">
                         <i class="ti-panel"></i>
-                        <p>Dashboard</p>
+                        <p>
+                            Dashboard
+                            <b class="caret"></b>
+                        </p>
                     </a>
+                    <div class="collapse in" id="dashboardOverview">
+                        <ul class="nav">
+                            <li class="active"><a href="overview.html">Overview</a></li>
+                            <li><a href="stats.html">Stats</a></li>
+                        </ul>
+                    </div>
                 </li>
 
                 <li class="">
