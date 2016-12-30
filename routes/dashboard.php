@@ -13,5 +13,5 @@
 
 Route::group(['prefix' => 'backend', 'middleware' => 'auth'], function ()
 {
-
+    Route::get('/', ['as' => 'dashboard.index', 'uses' => 'DashboardController@index']);
 });
