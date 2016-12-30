@@ -115,7 +115,7 @@
                 </li>
 
                 <li class="">
-                    <a href="#">
+                    <a href="{{ route('backend.media.index') }}">
                         <i class="ti-gallery"></i>
                         <p>Media</p>
                     </a>

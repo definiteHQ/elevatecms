@@ -14,4 +14,8 @@
 Route::group(['prefix' => 'backend', 'middleware' => 'auth'], function ()
 {
     Route::get('/', ['as' => 'dashboard.index', 'uses' => 'DashboardController@index']);
+
+    Route::group(['prefix' => 'media'], function () {
+        Route::get('/', ['as' => 'backend.media.index', 'uses' => 'MediaController@index']);
+    });
 });
