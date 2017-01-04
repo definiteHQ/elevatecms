@@ -1,0 +1,144 @@
+.ui.menu {
+	border-radius: 0;
+}
+
+.top-panel {
+	margin-bottom: 0 !important;
+}
+
+.top-panel .item:first-child:before {
+	/* display: none; */
+}
+
+.ui.menu.borderless.table-stat {
+	border: 0 !important;
+	border-left: 0 !important;
+	border-right: 0 !important;
+	box-shadow: none !important;
+}
+
+.add-new-button {
+	position: relative;
+	top: -5px;
+	margin-left: 8px !important;
+}
+
+.post-edit {
+	margin: 0 0 0 -7px!important;
+	min-height: 1.85714286em !important;
+}
+
+body.login-wrap {
+    background: #272727;
+}
+
+body .login-container {
+    background: white;
+    margin-top: 200px;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+body .login-container a {
+    color: #797979;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.ui.form input:not([type]), .ui.form input[type=text], .ui.form input[type=email], .ui.form input[type=search], .ui.form input[type=password], .ui.form input[type=date], .ui.form input[type=datetime-local], .ui.form input[type=tel], .ui.form input[type=time], .ui.form input[type=file], .ui.form input[type=url], .ui.form input[type=number] {
+    /* border: none !important;
+        box-shadow: 0 1px 3px 0 #D4D4D5, 0 0 0 1px #D4D4D5 !important; */
+}
+
+.main-sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #1B1C1D;
+    color: #fff;
+    z-index: 102;
+    -webkit-transition: all .3s ease-in-out 0s;
+    -o-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
+}
+
+.main-sidebar .ui.vertical.menu {
+    width: 100%;
+    font-size: 16px;
+}
+
+.main-sidebar .ui.accordion .title:not(.ui) {
+    color: white;
+}
+
+.main-container {
+    width: 100%;
+    padding-left: 240px;
+    -webkit-transition: all .3s ease-in-out 0s;
+    -o-transition: all .3s ease-in-out 0s;
+    transition: all .3s ease-in-out 0s;
+}
+
+.main-container-box {
+    padding: 2.5rem;
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.logo img{
+    margin-right: 10px;
+}
+
+.main-sidebar .item .accordion {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.main-sidebar .item.accordion .title {
+    padding: 0 !important;
+}
+
+
+.ui.vertical.menu .item:before {
+    display: none;
+}
+
+.media img{
+    max-width: 100%;
+    width: 100%;
+}
+
+.media .checkbox {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1rem;
+}
+
+.media.ui.grid>.column:not(.row),
+.media.ui.grid>.row>.column {
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+    vertical-align: top;
+    padding-top: 0 !important;
+    padding-bottom: .5rem !important;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
