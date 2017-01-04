@@ -115,7 +115,7 @@
                 </li>
 
                 <li class="">
-                    <a href="#">
+                    <a href="{{ route('backend.media.index') }}">
                         <i class="ti-gallery"></i>
                         <p>Media</p>
                     </a>
@@ -143,7 +143,7 @@
                 </li>
 
                 <li>
-                    <a class="logout" href="javascript:;">
+                    <a class="logout" href="/auth/logout">
                         <i class="ti-power-off"></i>
                         <p>Logout</p>
                     </a>
@@ -173,7 +173,7 @@
                               </a>
                               <ul class="dropdown-menu">
                                 <li>
-                                    <a class="logout" href="javascript:;">Logout</a>
+                                    <a class="logout" href="/auth/logout">Logout</a>
                                 </li>
                               </ul>
                         </li>
