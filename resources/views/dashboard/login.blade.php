@@ -1,85 +1,64 @@
 <!doctype html>
-<html lang="en">
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Elevate</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>EU-ASEAN Dashboard</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="{{ asset('dashboard/semantic-ui/semantic.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('dashboard/semantic-ui/calendar.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('dashboard/css/custom.css') }}">
 
-	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
+        <!-- JS -->
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+                integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+                crossorigin="anonymous"></script>
+    </head>
+    <body class="login-wrap">
 
+        <div class="ui container">
+            <div class="ui centered grid">
+                <div class="five wide computer sixteen wide mobile column">
+                    <div class="ui login-container">
+                    {!! Form::open([
+                        'class' => 'ui form'
+                    ]) !!}
+                        {{-- <form class="ui form"> --}}
+                            <div class="field">
+                                <img class="ui centered Mini image" src="https://definite.co.id/wp-content/themes/definite/static/svg/elevate.svg" alt="">
+                            </div>
+                            <div class="field">
+                                <input type="text" class="field" placeholder="Username">
+                            </div>
 
-    <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+                            <div class="field">
+                                <input type="password" class="field" placeholder="Password">
+                            </div>
 
-    <!-- Animation library for notifications   -->
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+                            <div class="field">
+                                <div class="ui checkbox">
+                                  <input type="checkbox" tabindex="0" class="hidden">
+                                  <label>Keep me logged in</label>
+                                </div>
+                            </div>
 
-    <!--  Paper Dashboard core CSS    -->
-    <link href="assets/css/paper-dashboard.css" rel="stylesheet"/>
-
-
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
-
-
-    <!--  Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
-    <link href="assets/css/themify-icons.css" rel="stylesheet">
-
-</head>
-
-<style>
-    body {
-        background: #f4f3ef;
-    }
-
-    .col-md-4 {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            -moz-transform: translateX(-50%) translateY(-50%);
-            -webkit-transform: translateX(-50%) translateY(-50%);
-            transform: translateX(-50%) translateY(-50%);
-    }
-</style>
-
-<body>
-
-
-<div class="wrapper">
-    <div class="col-md-4" style="float:none;margin: auto;">
-        <form class="card card-user" action="index.php">
-            <div class="content" style="padding:20px 40px;">
-                <h3  class="text-center">Login</h3>
-                <div class="form-group">
-                    <input type="email" class="form-control border-input" placeholder="Email" autocomplete="off" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control border-input" placeholder="Password" required>
-                </div>
-
-                <div class="form-group">
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-info btn-fill btn-wd">Login</button>
+                            <div class="field">
+                                <button class="fluid ui button primary" type="submit">Login</button>
+                            </div>
+                        {!! Form::close() !!}
+                        {{-- </form> --}}
                     </div>
                 </div>
             </div>
-        </form>
-
-         <div class="alert alert-danger">
-            <button type="button" aria-hidden="true" class="close">×</button>
-            <span>Wrong Credentials</span>
         </div>
-    </div>
-</div>
 
-</body>
 
-    <!--   Core JS Files   -->
-    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
-    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
-
+        <script src="{{ asset('dashboard/semantic-ui/semantic.min.js') }}"></script>
+        <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script>
+        <script src="{{ asset('dashboard/js/tinymce/tinymce.min.js') }}"></script>
+        <script src="{{ asset('dashboard/js/script.js') }}"></script>
+    </body>
 </html>
