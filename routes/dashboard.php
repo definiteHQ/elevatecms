@@ -13,9 +13,14 @@
 
 Route::group(['prefix' => 'backend', 'middleware' => 'auth'], function ()
 {
-    Route::get('/', ['as' => 'dashboard.index', 'uses' => 'DashboardController@index']);
+    Route::get('/', ['as' => 'backend.dashboard.index', 'uses' => 'DashboardController@index']);
 
-    Route::group(['prefix' => 'media'], function () {
+    Route::resource('posts', 'PostController');
+
+    Route::resource('categories', 'CategoryController');
+
+    Route::group(['prefix' => 'media'], function ()
+    {
         Route::get('/', ['as' => 'backend.media.index', 'uses' => 'MediaController@index']);
     });
 });

@@ -16,9 +16,9 @@
                         <i class="pin icon"></i> <b>Post</b>
                     </div>
                     <div class="content menu ">
-                        <a href="post.php" class="item">All Posts</a>
-                        <a href="add-new.php" class="item">Add New</a>
-                        <a href="category.php" class="item">Categories</a>
+                        <a href="{{ route('backend.posts.index') }}" class="item">All Posts</a>
+                        <a href="{{ route('backend.posts.create') }}" class="item">Add New</a>
+                        <a href="{{ route('backend.categories.index') }}" class="item">Categories</a>
                     </div>
                 </div>
             </div>
