@@ -14,18 +14,25 @@ class CreatePostsTable extends Migration
     {
         Schema::create('elevate_posts', function (Blueprint $table) {
             $table->increments('id');
-            $table->bigInteger('user_id');
-            $table->integer('have_custom_field');
-            $table->longText('post_content');
-            $table->text('post_title');
-            $table->text('post_excerpt');
-            $table->string('post_status', 20);
-            $table->string('post_name', 200);
-            $table->string('meta_keywords', 255);
-            $table->string('meta_description', 255);
-            $table->string('meta_title', 255);
-            $table->bigInteger('id_media');
+            $table->integer('user_id')->unsigned();
+            $table->bigInteger('parent_id');
+            $table->longText('content');
+            $table->text('title');
+            $table->text('excerpt');
+            $table->string('featured_image');
+            $table->string('publish_status', 20);
+            $table->string('slug', 200);
+            $table->string('seo_keywords', 255);
+            $table->string('seo_description', 255);
+            $table->string('seo_title', 255);
+            $table->string('type')->default('post');
             $table->timestamps();
+
+            $table->foreign('user_id')
+                ->on('elevate_users')
+                ->references('id')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
         });
     }
 

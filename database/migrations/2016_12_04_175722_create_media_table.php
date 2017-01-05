@@ -13,7 +13,7 @@ class CreateMediaTable extends Migration
     public function up()
     {
         Schema::create('elevate_media', function (Blueprint $table) {
-            $table->increments('id_media');
+            $table->increments('media_id');
             $table->string('type', 50);
             $table->string('file_name', 255);
             $table->string('alt_image', 255);

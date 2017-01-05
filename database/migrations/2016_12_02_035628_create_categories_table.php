@@ -13,9 +13,17 @@ class CreateCategoriesTable extends Migration
     public function up()
     {
         Schema::create('elevate_category', function (Blueprint $table) {
-            $table->increments('id_category');
+            $table->increments('id');
             $table->string('name', 100);
-            $table->integer('ordering');
+            $table->string('slug');
+            $table->string('description');
+            $table->string('excerpt');
+            $table->string('image');
+            $table->string('seo_title');
+            $table->text('seo_description');
+            $table->string('seo_keywords');
+            $table->integer('parent_id');
+            $table->integer('order');
         });
     }
 
