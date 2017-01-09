@@ -17,10 +17,15 @@ Route::group(['prefix' => 'backend', 'middleware' => 'auth'], function ()
 
     Route::resource('posts', 'PostController');
 
+    Route::resource('pages', 'PageController');
+
+    Route::resource('menus', 'MenuController');
+
     Route::resource('categories', 'CategoryController');
 
-    Route::group(['prefix' => 'media'], function ()
-    {
-        Route::get('/', ['as' => 'backend.media.index', 'uses' => 'MediaController@index']);
-    });
+    Route::resource('media', 'MediaController');
+
+    Route::resource('user', 'UserController');
+
+    Route::resource('settings', 'SettingController');
 });
