@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class CategoryController extends Controller
+class MenuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('dashboard.categories.index');
+        return view('dashboard.menus.index');
     }
 
     /**
@@ -26,7 +26,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.categories.create');
+        return view('dashboard.menus.create');
     }
 
     /**
