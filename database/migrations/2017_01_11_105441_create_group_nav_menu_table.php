@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNavMenuTable extends Migration
+class CreateGroupNavMenuTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,9 @@ class CreateNavMenuTable extends Migration
      */
     public function up()
     {
-        Schema::create('elevate_nav_menu', function (Blueprint $table) {
+        Schema::create('elevate_group_nav_menu', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('url');
-            $table->text('description');
-            $table->bigInteger('parent_menu');
-            $table->bigInteger('id_group');
-            $table->bigInteger('order');
         });
     }
 
@@ -30,6 +25,6 @@ class CreateNavMenuTable extends Migration
      */
     public function down()
     {
-        Schema::drop('elevate_nav_menu');
+        Schema::drop('elevate_group_nav_menu');
     }
 }

@@ -35,7 +35,7 @@
                         <i class="dropdown icon"></i>
                         <div class="menu">
                             <a class="item">Edit Profile</a>
-                            <a class="item">Logout</a>
+                            <a class="item" href="{{ url('auth/logout') }}">Logout</a>
                         </div>
                     </div>
                 </div>
