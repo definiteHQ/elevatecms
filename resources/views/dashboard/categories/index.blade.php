@@ -86,9 +86,9 @@
     </tbody>
   </table>
 
-  {{-- <div class="clearfix">
+  <div class="clearfix">
     <div class="ui right floated pagination menu">
-        <a class="icon item">
+        {{-- <a class="icon item">
             <i class="left chevron icon"></i>
         </a>
         <a class="item">1</a>
@@ -97,8 +97,8 @@
         <a class="item">4</a>
         <a class="icon item">
             <i class="right chevron icon"></i>
-        </a>
-    </div> --}}
-    {!!  $categories->render() !!}
+        </a> --}}
+        {!!  (new Landish\Pagination\SemanticUI($categories))->render() !!}
+    </div>
   </div>
 @stop

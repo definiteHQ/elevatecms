@@ -16,8 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::paginate();
-        $trashed    = Category::onlyTrashed()->paginate();
+        $categories = Category::paginate(1);
+        $trashed    = Category::onlyTrashed()->paginate(1);
 
         // dd($categories);
 
