@@ -7,11 +7,14 @@
   </a>
   </h1>
   <div class="ui text menu">
-    <a class="item active">
-      Published <div class="ui small teal label">{{ $categories->count() }}</div>
+    <a href="{{ route('backend.categories.index', ['page' => $request->get('page')]) }}"  class="item active">
+      Published <div class="ui small teal label">{{ $categoriesTotal }}</div>
     </a>
-    <a class="item">
-      Trash <div class="ui small label">0</div>
+    <a href="{{ route('backend.categories.index', [
+        'publish_status' => 'trashed',
+        'page' => $request->get('page')
+    ]) }}" class="item">
+      Trash <div class="ui small label">{{ $trashedTotal }}</div>
     </a>
   </div>
 
@@ -67,13 +70,13 @@
             <td>
               <strong><a href="">{{ $category->name }}</a></strong>
               <div class="ui text menu post-edit">
-                <a class="item">
+                <a href="{{ route('backend.categories.edit', ['id' => $category->id]) }}" class="item">
                   Edit
                 </a>
-                <a class="item">
+                <a href=""{{ route('backend.categories.destroy', ['id' => $category->id]) }}  class="item">
                   Delete
                 </a>
-                <a class="item">
+                <a href="{{ route('backend.categories.show', ['id' => $category->id]) }}" class="item">
                   View
                 </a>
               </div>

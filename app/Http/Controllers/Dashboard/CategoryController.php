@@ -14,16 +14,35 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::paginate(1);
-        $trashed    = Category::onlyTrashed()->paginate(1);
+        $categoriesTotal = Category::count();
+        $trashedTotal    = Category::onlyTrashed()->count();
 
-        // dd($categories);
+        if ($status = $request->has('publish_status'))
+        {
+            if ($status == 'trashed')
+            {
+                $categories = Category::onlyTrashed()->paginate();
+
+            }
+            else
+            {
+                $categories = Category::paginate();
+
+            }
+        }
+        else
+        {
+            $categories = Category::paginate();
+
+        }
 
         return view('dashboard.categories.index', compact(
+            'categoriesTotal',
+            'trashedTotal',
             'categories',
-            'trashed'
+            'request'
         ));
     }
 
@@ -34,7 +53,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.categories.create');
+        $model = new Category();
+        return view('dashboard.categories.create', compact('model'));
     }
 
     /**
@@ -66,7 +86,7 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -77,7 +97,15 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $isEdit = true;
+        if ($model = Category::find($id))
+        {
+            return view('dashboard.categories.edit', compact('model', 'isEdit'));
+        }
+        else
+        {
+            abort(404);
+        }
     }
 
     /**
@@ -89,7 +117,21 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        if ($category = Category::find($id))
+        {
+            if ($category->update($request->all()))
+            {
+                return redirect()->back()->with('message', 'Category succesfully updated!');
+            }
+            else
+            {
+                // redirect
+            }
+        }
+        else
+        {
+            abort(404);
+        }
     }
 
     /**
