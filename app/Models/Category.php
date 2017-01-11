@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Category extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'elevate_category';
 
     public $timestamps = false;
@@ -19,9 +22,11 @@ class Category extends Model
         'seo_title',
         'seo_description',
         'seo_keywords',
-        'paren_id',
+        'parent_id',
         'order',
     ];
+
+    protected $dates = ['deleted_at'];
 
     public function parent()
     {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Dashboard\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,15 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('dashboard.categories.index');
+        $categories = Category::paginate();
+        $trashed    = Category::onlyTrashed()->paginate();
+
+        // dd($categories);
+
+        return view('dashboard.categories.index', compact(
+            'categories',
+            'trashed'
+        ));
     }
 
     /**
@@ -34,9 +43,14 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request    $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         $data = $request->all();
+
+        if (empty($data['slug']))
+        {
+            $data['slug'] = str_slug($data['name']);
+        }
 
         if (Category::create($data))
         {

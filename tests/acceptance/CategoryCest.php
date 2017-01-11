@@ -17,7 +17,7 @@ class CategoryCest
     {
         $I->loginAsAdmin();
         $I->amOnPage('backend/categories/create');
-        $I->fillField('title', 'News');
+        $I->fillField('name', 'News');
 
         $I->fillTinyMceEditorByName('description', 'This is category for News Content');
         $I->fillField('excerpt', 'This is category for News Content');

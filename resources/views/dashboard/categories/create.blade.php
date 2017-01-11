@@ -27,7 +27,7 @@ Add New Category
         <div class="ui huge form">
             <div class="field">
                 {{-- <input placeholder="Enter title here" type="text"> --}}
-                {!! Form::text('title', null, [
+                {!! Form::text('name', null, [
                     'placeholder' => 'Enter title here'
                 ]) !!}
             </div>
