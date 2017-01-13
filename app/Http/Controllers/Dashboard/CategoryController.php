@@ -54,7 +54,9 @@ class CategoryController extends Controller
     public function create()
     {
         $model = new Category();
-        return view('dashboard.categories.create', compact('model'));
+        $isEdit = "";
+
+        return view('dashboard.categories.create', compact('model', 'isEdit'));
     }
 
     /**
