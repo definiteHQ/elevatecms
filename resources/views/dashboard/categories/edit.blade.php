@@ -2,7 +2,7 @@
 
 @section('content')
 <h1 class="ui header">
-Add New Category
+Edit Category
 </h1>
 
 {{-- <div class="ui grid"> --}}
