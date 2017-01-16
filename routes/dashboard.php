@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['prefix' => 'backend', 'middleware' => 'auth'], function ()
+Route::group(['prefix' => 'backend', 'middlewareGroups' => 'auth'], function ()
 {
     Route::get('/', ['as' => 'backend.dashboard.index', 'uses' => 'DashboardController@index']);
 

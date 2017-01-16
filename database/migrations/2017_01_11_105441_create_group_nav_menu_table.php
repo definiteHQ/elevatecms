@@ -15,6 +15,7 @@ class CreateGroupNavMenuTable extends Migration
         Schema::create('elevate_group_nav_menu', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->string('slug');
         });
     }
 
