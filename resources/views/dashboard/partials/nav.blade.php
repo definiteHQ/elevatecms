@@ -62,9 +62,9 @@
                         <i class="user icon"></i> <b>Users</b>
                     </div>
                     <div class="content menu ">
-                        <a href="{{ route('backend.user.index') }}" class="item">All Users</a>
-                        <a href="{{ route('backend.user.create') }}" class="item">Add New</a>
-                        <a href="add-new-user.php" class="item">Your Profile</a>
+                        <a href="{{ route('backend.users.index') }}" class="item">All Users</a>
+                        <a href="{{ route('backend.users.create') }}" class="item">Add New</a>
+                        <a href="" class="item">Your Profile</a>
                     </div>
                 </div>
             </div>
