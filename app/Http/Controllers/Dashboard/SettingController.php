@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
+use Input;
 
 class SettingController extends Controller
 {
@@ -47,9 +48,21 @@ class SettingController extends Controller
             $settings->key = $key;
             $settings->value = $value;
 
+            if ( ( !empty($data['site_logo']) AND $key == 'site_logo' ) || ( !empty($data['site_default_image']) AND $key == 'site_default_image' ) ) {
+                $currentImage = $settings->where('key', $key)->first();
+
+                $file = Input::file($key);
+                $path = 'dashboard/images/settings/';
+
+                deleteFile($path.$currentImage->value);
+                $upload = upload($file, $path);
+
+                $settings->value = $path.$upload;
+            }
+
             if ( $settings->where('key', $key)->count() > 0 ) {
                 $settings->where('key', $key)->update([
-                    'value' => $value
+                    'value' => $settings->value
                 ]);
             } else {
                 $settings->save();

@@ -9,7 +9,8 @@
     
 {!! Form::model(new App\Models\Setting, [
     'class' => 'ui grid form',
-    'url' => route('backend.settings.store')
+    'url' => route('backend.settings.store'),
+    'files' => true
 ]) !!}
   <div class="six wide computer sixteen wide mobile column">
     <div class="field">
@@ -28,11 +29,12 @@
   <div class="six wide computer sixteen wide mobile column">
     <div class="field">
       <label>Site Logo</label>
-      <input type="file" name="site.logo">
+      img
+      <input type="file" name="site.logo" accept="jpg, jpeg, png" value="{{ App\Models\Setting::getValue('site_logo') }}">
     </div>
     <div class="field">
       <label>Site Default Image</label>
-      <input type="file" name="site.default.image">
+      <input type="file" name="site.default.image" accept="jpg, jpeg, png" value="{{ App\Models\Setting::getValue('site_default_image') }}">
     </div>
     <div class="field">
       <label>Google Anlytics Code</label>

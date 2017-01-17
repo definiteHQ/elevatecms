@@ -19,3 +19,32 @@ if (!function_exists('error_widget'))
         return $template;
     }
 }
+
+if (!function_exists('upload'))
+{
+    function upload($file, $path)
+    {
+        $filename = str_random(10) . $file->getClientOriginalName();
+        
+        $file->move($path, $filename);
+
+        return $filename;
+    }
+}
+
+if (!function_exists('deleteFile'))
+{
+    /**
+     * Delete file savely
+     * @return bool
+     */
+    function deleteFile($path)
+    {
+        if (file_exists($path) && is_file($path))
+        {
+            return unlink($path);
+        }
+
+        return false;
+    }
+}
